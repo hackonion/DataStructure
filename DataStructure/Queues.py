@@ -40,7 +40,7 @@ class queues():
         """ Add elements to back of queue."""
         if self.size == len(self.data):
             self.resize(2 * len(self.data))
-        avail = (self._front + self.size) % len(self.data)
+        avail = (self.front + self.size) % len(self.data)
         self.data[avail] = item
         self.size += 1
     
@@ -54,4 +54,4 @@ class queues():
             walk = (1 + walk) % len(old)
         self.front = 0
     
-    
+

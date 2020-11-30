@@ -55,5 +55,9 @@ class Tree:
             else:
                 return 1 + self.depht(self.parents(p))
         
-        
-            
+        def _height(self,p):
+            """Return the height of the subtree rooted at position p"""
+            if self.is_leap():
+                return 0
+            else:
+                return 1 + max(self._height(c) for c in self.children(p))
